@@ -21,14 +21,17 @@
         </div>
     </div>
 
+    {% for i in movie_id.movies.all %}
     <!-- Блок для комментариев -->
     <div class="comment-section">
         <h5>Комментарии</h5>
         <div class="comment">
-            <p> (2024-09-24): Офигенный фильм! Рекомендую! <strong>Оценка:</strong> 5</p>
+            <p> {{ i.created_at }}: {{ i.comment }} <strong>Оценка:</strong>{{ i.stars }}</p>
         </div>
     </div>
+    {% endfor %}
 </div>
+    
 
 <!-- Футер -->
 {% include 'components/footer.html' %}
