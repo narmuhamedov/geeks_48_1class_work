@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tv_show',
     'hastags',
+    'todo',
 ]
 
 MIDDLEWARE = [

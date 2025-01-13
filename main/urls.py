@@ -6,6 +6,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('tv_show.urls')),
+    path('', include('hastags.urls')),
+    path('', include('todo.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,

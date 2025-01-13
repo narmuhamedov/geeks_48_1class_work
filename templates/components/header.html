@@ -26,7 +26,7 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'movie_list' %}" style="color: yellow;">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: yellow;">Хэш теги</a>
+                    <a class="nav-link" href="{% url 'all_products' %}" style="color: yellow;">Хэш теги</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -34,11 +34,11 @@
                         TODOLIST
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Добавить</a></li>
+                        <li><a class="dropdown-item" href="{% url 'create_todo' %}">Добавить</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Список задач</a></li>
+                        <li><a class="dropdown-item" href="{% url 'todo_list' %}">Список задач</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
