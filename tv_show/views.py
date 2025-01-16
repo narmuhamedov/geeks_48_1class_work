@@ -1,7 +1,27 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from . import models
+from django.views.generic import ListView
 # Create your views here.
+
+#Searc
+class SearchView(ListView):
+    template_name = 'show.html'
+    context_object_name = 'movie_list'
+
+
+    def get_queryset(self):
+        return models.Movies.objects.filter(title__icontains=self.request.GET.get('q'))
+
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['q'] = self.request.GET.get('q')
+        return context
+
+
+
+
 
 #Список фильмов
 def movie_list(request):
