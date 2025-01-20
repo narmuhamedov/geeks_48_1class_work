@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('tv_show.urls')),
     path('', include('hastags.urls')),
     path('', include('todo.urls')),
+    path('', include('parser_rezka.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,

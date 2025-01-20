@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'tv_show',
     'hastags',
     'todo',
+    'parser_rezka',
 ]
 
 MIDDLEWARE = [
