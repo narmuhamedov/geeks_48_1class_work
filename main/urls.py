@@ -9,6 +9,7 @@ urlpatterns = [
     path('', include('hastags.urls')),
     path('', include('todo.urls')),
     path('', include('parser_rezka.urls')),
+    path('', include('users.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,

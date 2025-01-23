@@ -42,10 +42,12 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link enable" href="" style="color: yellow;">Регистрация</a>
+                    <a class="nav-link enable" href="{% url 'users:register' %}" style="color: yellow;">Регистрация</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link enable" href="{% url 'rezka_list' %}" style="color: yellow;">Другие фильмы</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link enable" href="{% url 'rezka_form' %}" style="color: yellow;">Парсинг</a>
                 </li>
             </ul>
