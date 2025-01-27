@@ -2,9 +2,22 @@
 {% include 'components/header.html' %}
 <link rel="stylesheet" href="{% static 'css/show.css' %}">
 <!-- Контент с карточками -->
+{% load static %}
+{% include 'components/header.html' %}
+<link rel="stylesheet" href="{% static 'css/show.css' %}">
+<!-- Контент с карточками -->
 <div class="container mt-4 content">
-    <div class="row justify-content-center">
+    <div class="slider-container">
+        <div class="slider">
+            {% for i in slider %}
+            <div class="slide">
+                <img src="{{ i.image_slide.url }}" alt="Slide 1">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
+    <div class="row justify-content-center">
         {% for i in movie_list %}
         <!-- Пример для еще одной карточки -->
         <div class="col-md-4 mb-4">
@@ -18,10 +31,107 @@
             </div>
         </div>
         {% endfor %}
-
     </div>
 </div>
 
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .slider-container {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+    }
 
+    .slider {
+        display: flex;
+        width: 300%;
+        animation: slide 24s infinite linear; /* Smooth 24s loop, linear timing for constant speed */
+    }
+
+    .slide {
+        width: 100%;
+        height: 300px;
+        flex-shrink: 0;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Prevent image cropping */
+    }
+
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        33.33% { transform: translateX(-100%); }
+        66.66% { transform: translateX(-200%); }
+        100% { transform: translateX(-300%); }
+    }
+</style>
+<!--Футер-->
+{% include 'components/footer.html' %}
+
+<div class="container mt-4 content">
+
+
+    <div class="row justify-content-center">
+        {% for i in movie_list %}
+        <!-- Пример для еще одной карточки -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="width: 100%;">
+                <img src="{{ i.image.url }}" class="card-img-top" alt="вставьте логику картинки">
+                <div class="card-body">
+                    <h5 class="card-title">{{ i.title }}</h5>
+                    <p class="card-text">{{ i.created_at }}</p>
+                    <a href="/movie_detail/{{ i.id }}/" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .slider-container {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .slider {
+        display: flex;
+        width: 300%;
+        animation: slide 24s infinite linear; /* Smooth 24s loop, linear timing for constant speed */
+    }
+
+    .slide {
+        width: 100%;
+        height: 300px;
+        flex-shrink: 0;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Prevent image cropping */
+    }
+
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        33.33% { transform: translateX(-100%); }
+        66.66% { transform: translateX(-200%); }
+        100% { transform: translateX(-300%); }
+    }
+</style>
 <!--Футер-->
 {% include 'components/footer.html' %}

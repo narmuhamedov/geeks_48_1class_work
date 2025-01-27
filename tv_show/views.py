@@ -27,7 +27,11 @@ class SearchView(ListView):
 def movie_list(request):
     if request.method == 'GET':
         movie_list = models.Movies.objects.all().order_by('-id')
-        context = {'movie_list': movie_list}
+        slider = models.Slider.objects.all()
+        context = {
+            'movie_list': movie_list,
+            'slider': slider,
+        }
         return render(request, template_name='show.html', context=context)
     
 
