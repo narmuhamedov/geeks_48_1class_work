@@ -1,0 +1,51 @@
+/* Стили для карточки */
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin: 20px auto; /* Центрирование карточки */
+}
+
+/* Стили для заголовка */
+.card h1 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+/* Стили для текста */
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Контейнер для кнопок */
+.buttons {
+    text-align: center; /* Выравнивание кнопок по центру */
+    margin-top: 20px;
+}
+
+/* Стили для кнопок */
+.buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Стили для ссылок внутри кнопок */
+.buttons button a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Эффект при наведении на кнопку */
+.buttons button:hover {
+    background-color: #45a049;
+}
